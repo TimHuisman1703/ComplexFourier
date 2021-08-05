@@ -1,0 +1,133 @@
+# Track
+down 1
+right 2
+arc n e > 1
+arc w s < 1
+right 4
+arc s e < 1
+arc w n > 1
+right 15
+arc s e < 1
+up 16
+arc e n < 1
+left 9
+arc e s > 1
+left 4
+down 0.5 2
+left 1 4
+up 1.5 2
+left 5
+# Up right tribune
+up 1
+arc e n < 1
+down 2.5 4
+arc w e < 0.5
+up 0.5 4
+#
+left 2
+# Up mid tribune
+up 1.5 4
+arc e w < 0.5
+down 2
+arc w e < 0.5
+up 0.5 4
+#
+left 2
+# Up left tribune
+up 2
+arc n w < 1
+down 1.5 4
+arc w e < 0.5
+up 0.5 4
+#
+left 3
+arc e s > 1
+left 1
+down 1
+right 1
+arc n e > 1
+right 3
+# Low left tribune
+up 0.5 4
+arc e w < 0.5
+down 1.5 4
+arc w s < 1
+up 2
+#
+right 2
+# Low mid tribune
+up 0.5 4
+arc e w < 0.5
+down 2
+arc w e < 0.5
+up 1.5 4
+#
+right 2
+# Low left tribune
+up 0.5 4
+arc e w < 0.5
+down 2.5 4
+arc s e < 1
+up 1
+#
+right 5
+up 1.5 2
+right 1 4
+down 0.5 2
+right 4
+arc n e > 1
+right 7
+arc n e > 2
+down 1
+# Left up tribune
+left 0.5
+arc n s < 0.5
+right 2
+arc s n < 0.5
+left 1.5 6
+#
+down 3
+# Left mid tribune
+left 0.5
+arc n s < 0.5
+right 2
+arc s n < 0.5
+left 1.5 6
+#
+down 3
+# Left down tribune
+left 0.5
+arc n s < 0.5
+right 2
+arc s n < 0.5
+left 1.5 6
+#
+down 3
+arc e s > 2
+left 14
+arc n w < 1
+arc e s > 1
+left 2
+arc s w > 1
+arc e n < 1
+left 3
+
+# Car
+down 0.5 4
+arc e s > 2
+arc s n > 1
+right 4.5 2
+arc n e > 1
+arc w s < 1
+right 3 2
+arc s e < 1
+arc w n > 1
+right 14
+arc s e < 2
+up 10
+arc e n < 4
+left 25.5 2
+arc n w < 2 4
+arc w s < 2 2
+arc n e > 4 2
+down 7 1
