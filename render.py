@@ -1,6 +1,6 @@
 ACCURACY = 5
 LINE_THICKNESS = 4
-VIDEO_RENDER = False
+VIDEO_RENDER = True
 VECTOR_RENDER = True
 
 if __name__ == "__main__":
@@ -53,7 +53,6 @@ if __name__ == "__main__":
 		con.set_source_rgb(0.129, 0.392, 0.612)
 		con.rectangle(0, 0, WIDTH, HEIGHT)
 		con.fill()
-		con.stroke()
 
 		con.set_source_rgb(1.0, 1.0, 1.0)
 		con.set_line_width(LINE_THICKNESS)
@@ -116,10 +115,6 @@ if __name__ == "__main__":
 
 				phase = ((i + start) * 2*pi) / size
 				x, y = lengths[0][0], lengths[0][1]
-
-				con.set_source_rgb(0.4, 0.4, 0.4)
-				con.arc(x, y, LINE_THICKNESS, 0, 2*pi)
-				con.fill()
 				
 				con.set_source_rgb(0.15, 0.15, 0.15)
 
@@ -132,10 +127,8 @@ if __name__ == "__main__":
 					dy = sin(phase * rot) * lengths[rot][0] + cos(phase * rot) * lengths[rot][1]
 					length = sqrt(dx * dx + dy * dy)
 					
-					if length >= 1:
-						con.arc(x, y, length, 0, 2*pi)
-						con.stroke()
-					
+					con.arc(x, y, length, 0, 2*pi)
+					con.stroke()
 					
 					points[j+1] = (x + dx, y + dy)
 
@@ -145,6 +138,11 @@ if __name__ == "__main__":
 				con.set_source_rgb(0.4, 0.4, 0.4)
 
 				x, y = points[0]
+				
+				con.arc(x, y, LINE_THICKNESS, 0, 2*pi)
+				con.fill()
+				con.stroke()
+
 				for j in range(1, len(points)):
 					nx, ny = points[j]
 					
@@ -174,8 +172,11 @@ if __name__ == "__main__":
 				img_vectors = cv2.imread(f"{DIRECTORY}/frames/vectors_{i:04d}.png")
 				img = cv2.addWeighted(img, 1.0, img_vectors, 1.0, 0)
 
-			if i == 0 or i == size:
+			if i == 0:
 				for _ in range(60):
+					video.write(img)
+			elif i == size:
+				for _ in range(90):
 					video.write(img)
 			else:
 				video.write(img)
